@@ -1,23 +1,18 @@
-import React, { FC } from 'react'
-import { A } from 'components/Link'
+import { A } from "./Link";
 
 interface Props {
-  children: string
-  className?: string
-  tabIndex?: number
+  children?: JSX.Element;
+  className?: string;
+  tabIndex?: number;
 }
 
-export const EmailAnchor: FC<Props> = ({
-  children,
-  className = '',
-  ...props
-}) => {
+export function EmailAnchor({ children, className = "", ...props }: Props) {
   return (
     <A className={className} href={`mailto:${children}`} {...props}>
       {children}
     </A>
-  )
+  );
 }
 
 // shorthand
-export const EA = EmailAnchor
+export const EA = EmailAnchor;

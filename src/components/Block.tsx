@@ -1,10 +1,8 @@
-import React, { ReactNode } from 'react'
-
 type Props = {
-  children: ReactNode
-  className?: string
-}
+  children?: JSX.Element;
+  className?: string;
+};
 
-export function Block({ children, className = '' }: Props) {
-  return <div className={`my4 ${className}`}>{children}</div>
+export function Block({ children, className = "" }: Props) {
+  return <div class={`my4 ${className}`}>{children}</div>;
 }

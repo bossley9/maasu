@@ -1,10 +1,8 @@
-import React, { ReactNode } from 'react'
-
 type Props = {
-  children: ReactNode
-  className?: string
-}
+  children?: JSX.Element;
+  className?: string;
+};
 
-export function Container({ children, className = '' }: Props) {
-  return <div className={`container py6 ${className}`}>{children}</div>
+export function Container({ children, className = "" }: Props) {
+  return <div class={`container py6 ${className}`}>{children}</div>;
 }

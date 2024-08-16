@@ -1,15 +1,12 @@
-import { Fragment } from 'react'
-import { RouteComponentProps } from '@reach/router'
-import { useDocumentTitle } from '../../hooks/meta'
-import { A } from '../../components/Link'
-import { EA } from '../../components/EmailAnchor'
-import { TextBlock } from '../../components/TextBlock'
-import { SOCIAL } from '../../constants'
+import { BaseLayout } from "../../layouts/BaseLayout";
+import { A } from "../../components/Link";
+import { EA } from "../../components/EmailAnchor";
+import { TextBlock } from "../../components/TextBlock";
+import { SOCIAL } from "../../constants";
 
-function WAYFContainer(_: RouteComponentProps) {
-  useDocumentTitle('Where Are You From')
+export default function () {
   return (
-    <Fragment>
+    <BaseLayout title="Where Are You From">
       <TextBlock title="The Where Are You From Project">
         <p>#whereareyoufrom?</p>
         <p>
@@ -27,19 +24,17 @@ function WAYFContainer(_: RouteComponentProps) {
           and friends who grew up in the Midwest.
         </p>
         <p>
-          If you are interested in reading stories, you can check out our{' '}
-          <A href={SOCIAL.filter((s) => s.name === 'facebook')[0].url}>
+          If you are interested in reading stories, you can check out our{" "}
+          <A href={SOCIAL.filter((s) => s.name === "facebook")[0].url}>
             Facebook page
-          </A>{' '}
+          </A>{" "}
           or view our monthly newsletters and read the stories there.
         </p>
         <p>
-          For more information on this project, contact{' '}
+          For more information on this project, contact{" "}
           <EA>advocacy@maasu.org</EA>.
         </p>
       </TextBlock>
-    </Fragment>
-  )
+    </BaseLayout>
+  );
 }
-
-export default WAYFContainer
