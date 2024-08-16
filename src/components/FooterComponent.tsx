@@ -13,7 +13,7 @@ export function FooterComponent() {
             <img
               src="/assets/branding/logo.svg"
               alt={APP_NAME_LONG}
-              style={{ height: LOGO_HEIGHT }}
+              style={`height:${LOGO_HEIGHT}`}
             />
           </A>
         </div>
