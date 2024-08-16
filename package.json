@@ -3,7 +3,8 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "build": "tsx main.ts"
+    "build": "tsx main.ts",
+    "server": "python3 -m http.server -d ./dist 3000"
   },
   "devDependencies": {
     "@types/node": "22.3.0",

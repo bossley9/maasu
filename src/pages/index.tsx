@@ -1,3 +1,4 @@
-import Mission from './mission'
+import Mission from "./mission/index";
 
-export default Mission
+export default Mission;
+

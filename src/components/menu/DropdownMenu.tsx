@@ -1,10 +1,5 @@
-import React, { FC, ReactNode, useRef, useState } from 'react'
-import { Link } from '@reach/router'
-import classnames from 'classnames'
-import { Menu } from './types'
-
-// There is no rule that says all content has to be 100% accessible to all people —
-// you just need to do what you can, and make your apps as accessible as possible.
+import { Menu } from "./types";
+import { A } from "../Link";
 
 // https://developer.mozilla.org/en-US/docs/Learn/Accessibility/CSS_and_JavaScript
 // https://www.w3.org/WAI/tutorials/menus/flyout/#flyoutnavkbbtn
@@ -13,85 +8,78 @@ import { Menu } from './types'
 
 // it also assumes all links are relative and internal
 
-const ulClassNames = 'lstn pa0 ma0'
-const liClassNames = 'pointer px2'
+const ulClassNames = "lstn pa0 ma0";
+const liClassNames = "pointer px2";
 
-const itemClassNames = 'ff-averta c-text-light hov-c-primary-main fw700'
+const itemClassNames = "ff-averta c-text-light hov-c-primary-main fw700";
 
-const mouseOutTimeout = 100
+const mouseOutTimeout = 100;
 
-type MenuProps = { menu: Menu; className?: string }
+type MenuProps = { menu: Menu; className?: string };
 
-export const DropdownMenu: FC<MenuProps> = ({ menu, className = '' }) => {
-  const keys = Object.keys(menu)
+export function DropdownMenu({ menu, className = "" }: MenuProps) {
+  const keys = Object.keys(menu);
 
   return (
-    <nav aria-label="menu" className={className}>
-      <ul className={ulClassNames}>
-        {keys.map((k, i) => {
-          const item = menu[k]
-          return typeof item === 'string' ? (
-            <DropdownItem
-              key={i}
-              name={k}
-              url={item as string}
-              className="dib"
-            />
+    <nav aria-label="menu" class={className}>
+      <ul class={ulClassNames}>
+        {keys.map((k) => {
+          const item = menu[k];
+          return typeof item === "string" ? (
+            <DropdownItem name={k} url={item as string} className="dib" />
           ) : (
-            <DropdownSubmenu key={i} title={k}>
-              {Object.keys(item).map((sk, j) => (
+            <DropdownSubmenu title={k}>
+              {Object.keys(item).map((sk) => (
                 <DropdownItem
-                  key={j}
                   name={sk}
                   url={item[sk] as string}
                   className="db"
                 />
               ))}
             </DropdownSubmenu>
-          )
+          );
         })}
       </ul>
     </nav>
-  )
+  );
 }
 
 type SubmenuProps = {
-  title: string
-  children: ReactNode
-}
+  title: string;
+  children?: JSX.Element;
+};
 
-export const DropdownSubmenu: FC<SubmenuProps> = ({ title, children }) => {
-  const [isOpen, setIsOpen] = useState(false)
-  let timer = -1
-  const el = useRef<HTMLLIElement>(null)
+function DropdownSubmenu({ title, children }: SubmenuProps) {
+  const isOpen = false;
+  const setIsOpen = (_newState: boolean) => {};
+  let timer = -1;
 
   const handleMouseOver = () => {
-    setIsOpen(true)
-    window.clearTimeout(timer)
-  }
+    setIsOpen(true);
+    window.clearTimeout(timer);
+  };
 
   const handleMouseOut = () => {
-    timer = window.setTimeout(() => setIsOpen(false), mouseOutTimeout)
-  }
+    timer = window.setTimeout(() => setIsOpen(false), mouseOutTimeout);
+  };
 
-  const handleBlur = (e: React.FocusEvent) => {
-    if (el.current && !el.current.contains(e.relatedTarget as Node)) {
-      setIsOpen(false)
-    }
-  }
+  const handleBlur = () => {
+    // if (el.current && !el.current.contains(e.relatedTarget as Node)) {
+    // setIsOpen(false);
+    // }
+  };
 
-  const handleClick = () => setIsOpen(!isOpen)
+  const handleClick = () => setIsOpen(!isOpen);
 
   return (
     <li
-      ref={el}
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       onBlur={handleBlur}
-      className={classnames(liClassNames, 'posr dib')}
+      class={`${liClassNames} posr dib`}
     >
       <button
-        className={classnames('clearall', itemClassNames)}
+        class={`clearall ${itemClassNames}`}
         onClick={handleClick}
         aria-haspopup="true"
         aria-expanded={isOpen}
@@ -99,28 +87,26 @@ export const DropdownSubmenu: FC<SubmenuProps> = ({ title, children }) => {
         {title}
       </button>
       <ul
-        className={classnames(ulClassNames, 'posa pa1 bs2 bg-bg-main', {
-          dn: !isOpen,
-        })}
+        class={`${ulClassNames} posa pa1 bs2 bg-bg-main ${!isOpen ? "dn" : ""}`}
       >
         {children}
       </ul>
     </li>
-  )
+  );
 }
 
 type ItemProps = {
-  name: string
-  url: string
-  className?: string
-}
+  name: string;
+  url: string;
+  className?: string;
+};
 
-const DropdownItem: FC<ItemProps> = ({ name, url, className }) => {
+function DropdownItem({ name, url, className = "" }: ItemProps) {
   return (
-    <li className={classnames(liClassNames, itemClassNames, className)}>
-      <Link to={url} className="db tdn c-inh">
-        <div className="pa2">{name}</div>
-      </Link>
+    <li class={`${liClassNames}, ${itemClassNames}, ${className}`}>
+      <A href={url} className="db tdn c-inh">
+        <div class="pa2">{name}</div>
+      </A>
     </li>
-  )
+  );
 }

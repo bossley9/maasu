@@ -1,25 +1,21 @@
-import { Fragment } from 'react'
-import { Link } from '@reach/router'
-import { DropdownMenu } from './menu/DropdownMenu'
-import { ModalMenu } from './menu/ModalMenu'
-import { APP_NAME_LONG, HEADER_HEIGHT, LOGO_HEIGHT, MENU } from '../constants'
+import { DropdownMenu } from "./menu/DropdownMenu";
+import { ModalMenu } from "./menu/ModalMenu";
+import { APP_NAME_LONG, HEADER_HEIGHT, LOGO_HEIGHT, MENU } from "../constants";
+import { A } from "./Link";
 
 export function HeaderComponent() {
   return (
-    <Fragment>
-      <header className="w-100 bg-bg-main posf z1">
-        <div className="container">
-          <div
-            className="df ai-c jc-sb px4-nl"
-            style={{ height: HEADER_HEIGHT }}
-          >
-            <Link to="/" className="df ai-c">
+    <>
+      <header class="w-100 bg-bg-main posf z1">
+        <div class="container">
+          <div class="df ai-c jc-sb px4-nl" style={`height:${HEADER_HEIGHT}`}>
+            <A href="/" className="df ai-c">
               <img
                 src="/assets/branding/logo.svg"
                 alt={APP_NAME_LONG}
-                style={{ height: LOGO_HEIGHT }}
+                style={`height:${LOGO_HEIGHT}`}
               />
-            </Link>
+            </A>
             <DropdownMenu menu={MENU} className="dn db-l" />
             <ModalMenu
               menu={MENU}
@@ -29,7 +25,7 @@ export function HeaderComponent() {
           </div>
         </div>
       </header>
-      <div aria-hidden="true" style={{ minHeight: HEADER_HEIGHT }} />
-    </Fragment>
-  )
+      <div aria-hidden="true" style={`min-height:${HEADER_HEIGHT}`} />
+    </>
+  );
 }
