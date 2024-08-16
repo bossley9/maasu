@@ -10,6 +10,8 @@ async function* walk(dir: string): AsyncGenerator<string> {
 }
 
 async function main() {
+  fs.rmSync("./dist", { recursive: true, force: true });
+
   for await (const page of walk("./src/pages")) {
     const output = "./dist" + page.substring(9, page.length - 3) + "html";
     fs.mkdirSync(output.substring(0, output.lastIndexOf("/")), {
@@ -17,6 +19,8 @@ async function main() {
     });
     fs.writeFileSync(output, (await import("./" + page)).default());
   }
+
+  fs.cpSync("./src/static", "./dist", { recursive: true });
 }
 
 main();

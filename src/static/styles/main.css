@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'Averta';
+  src: url('/fonts/Averta/Averta-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Averta';
+  src: url('/fonts/Averta/Averta-Semibold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Averta';
+  src: url('/fonts/Averta/Averta-ExtraBold.otf');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hind';
+  src: url('/fonts/Hind/Hind-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hind';
+  src: url('/fonts/Hind/Hind-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+html, body {
+  font-family: 'Averta', sans-serif;
+}
