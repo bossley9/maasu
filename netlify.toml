@@ -1,11 +1,6 @@
 [build]
-  command = "yarn build"
-  functions = "./functions/build"
-  publish = "build/"
-
-[build.processing]
-  bundle = true
-  minify = true
+  command = "npm run build"
+  publish = "dist/"
 
 [[redirects]]
   from = "/*"
