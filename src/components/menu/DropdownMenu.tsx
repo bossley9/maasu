@@ -51,36 +51,36 @@ type SubmenuProps = {
 
 function DropdownSubmenu({ title, children }: SubmenuProps) {
   const isOpen = false;
-  const setIsOpen = (_newState: boolean) => {};
-  let timer = -1;
+  // const setIsOpen = (_newState: boolean) => {};
+  // let timer = -1;
 
-  const handleMouseOver = () => {
-    setIsOpen(true);
-    window.clearTimeout(timer);
-  };
+  // const handleMouseOver = () => {
+  //   setIsOpen(true);
+  //   window.clearTimeout(timer);
+  // };
 
-  const handleMouseOut = () => {
-    timer = window.setTimeout(() => setIsOpen(false), mouseOutTimeout);
-  };
+  // const handleMouseOut = () => {
+  //   timer = window.setTimeout(() => setIsOpen(false), mouseOutTimeout);
+  // };
 
-  const handleBlur = () => {
-    // if (el.current && !el.current.contains(e.relatedTarget as Node)) {
-    // setIsOpen(false);
-    // }
-  };
+  // const handleBlur = () => {
+  //   // if (el.current && !el.current.contains(e.relatedTarget as Node)) {
+  //   // setIsOpen(false);
+  //   // }
+  // };
 
-  const handleClick = () => setIsOpen(!isOpen);
+  // const handleClick = () => setIsOpen(!isOpen);
 
   return (
     <li
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
-      onBlur={handleBlur}
+      // onMouseOver={handleMouseOver}
+      // onMouseOut={handleMouseOut}
+      // onBlur={handleBlur}
       class={`${liClassNames} posr dib`}
     >
       <button
         class={`clearall ${itemClassNames}`}
-        onClick={handleClick}
+        // onClick={handleClick}
         aria-haspopup="true"
         aria-expanded={isOpen}
       >
@@ -103,10 +103,10 @@ type ItemProps = {
 
 function DropdownItem({ name, url, className = "" }: ItemProps) {
   return (
-    <li class={`${liClassNames}, ${itemClassNames}, ${className}`}>
-      <A href={url} className="db tdn c-inh">
+    <li class={`${liClassNames} ${itemClassNames} ${className}`}>
+      <a href={url} class="db tdn c-inh">
         <div class="pa2">{name}</div>
-      </A>
+      </a>
     </li>
   );
 }

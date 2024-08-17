@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'Averta';
   src: url('/fonts/Averta/Averta-Regular.otf');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Averta';
   src: url('/fonts/Averta/Averta-Semibold.otf');
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -22,17 +22,475 @@
 @font-face {
   font-family: 'Hind';
   src: url('/fonts/Hind/Hind-Regular.woff') format('woff');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Hind';
   src: url('/fonts/Hind/Hind-Bold.woff') format('woff');
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
 }
 
-html, body {
-  font-family: 'Averta', sans-serif;
+.ff-averta,
+body {
+  font-family: 'Averta', sans-serif !important;
+}
+
+.fa-w-10 {
+  width: 0.625em;
+}
+
+.fa-w-14 {
+  width: 0.875em;
+}
+
+.fa-w-16 {
+  width: 1em;
+}
+
+.ff-hind {
+  font-family: Hind, sans-serif !important
+}
+
+.fs0 {
+  font-size: 1rem !important
+}
+
+.fs1,
+.title5 {
+  font-size: 1.5rem !important
+}
+
+.title4 {
+  font-size: 2.25rem !important
+}
+
+.title3 {
+  font-size: 3.375rem !important
+}
+
+.fw700 {
+  font-weight: 700 !important
+}
+
+.fw900 {
+  font-weight: 900 !important
+}
+
+.fsi {
+  font-style: italic !important
+}
+
+.tdn {
+  text-decoration: none !important
+}
+
+.hov-tdu:hover,
+.tdu {
+  text-decoration: underline !important
+}
+
+.pa0 {
+  padding: 0 !important
+}
+
+.pl0 {
+  padding-left: 0 !important
+}
+
+.ma0 {
+  margin: 0 !important
+}
+
+.my0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important
+}
+
+.px1 {
+  padding-left: .25rem !important
+}
+
+.px1 {
+  padding-right: .25rem !important
+}
+
+td,
+th {
+  padding-top: .25rem !important;
+  padding-bottom: .25rem !important
+}
+
+.mx1 {
+  margin-left: .25rem !important
+}
+
+.mx1 {
+  margin-right: .25rem !important
+}
+
+.pa2 {
+  padding: .5rem !important
+}
+
+.px2,
+td,
+th {
+  padding-left: .5rem !important
+}
+
+.px2,
+td,
+th {
+  padding-right: .5rem !important
+}
+
+.mb2 {
+  margin-bottom: .5rem !important
+}
+
+.mx2 {
+  margin-left: .5rem !important
+}
+
+.mx2 {
+  margin-right: .5rem !important
+}
+
+.my2 {
+  margin-top: .5rem !important;
+  margin-bottom: .5rem !important
+}
+
+.pa3 {
+  padding: 1rem !important
+}
+
+.my3 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important
+}
+
+.my4 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important
+}
+
+.pb5 {
+  padding-bottom: 2rem !important
+}
+
+.px5 {
+  padding-left: 2rem !important
+}
+
+.px5 {
+  padding-right: 2rem !important
+}
+
+.py5 {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important
+}
+
+.py6 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important
+}
+
+.mt6 {
+  margin-top: 3rem !important
+}
+
+.my9 {
+  margin-top: 8rem !important;
+  margin-bottom: 8rem !important
+}
+
+.container,
+.mxa,
+button,
+input,
+textarea {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.posr {
+  position: relative !important
+}
+
+.posf {
+  position: fixed !important
+}
+
+.db,
+button,
+input,
+textarea {
+  display: block !important
+}
+
+.dn {
+  display: none !important
+}
+
+.dib {
+  display: inline-block !important
+}
+
+.df {
+  display: -webkit-flex !important;
+  display: flex !important
+}
+
+.w-30 {
+  width: 30% !important
+}
+
+.w-50 {
+  width: 50% !important
+}
+
+.w-80 {
+  width: 80% !important
+}
+
+.h-100 {
+  height: 100% !important
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.br {
+  border-radius: 3px !important
+}
+
+.border,
+button,
+input,
+textarea {
+  border-width: 2px !important;
+  border-style: solid;
+  border-color: #464646
+}
+
+.bs-solid {
+  border-style: solid !important
+}
+
+.z1 {
+  z-index: 1 !important
+}
+
+.tl {
+  text-align: left !important
+}
+
+.tc {
+  text-align: center !important
+}
+
+.tr {
+  text-align: right !important
+}
+
+.c-inh {
+  color: inherit !important
+}
+
+.c-bg-main {
+  color: #fbfbfb !important
+}
+
+.c-text-light {
+  color: #777 !important
+}
+
+.c-text-main,
+.hov-c-text-main:hover,
+body,
+button,
+input,
+textarea {
+  color: #404040 !important
+}
+
+.c-primary-main,
+.hov-c-primary-main:hover {
+  color: #b23030 !important
+}
+
+.bg-bg-main,
+.hov-bg-bg-main:hover,
+body,
+button,
+input,
+textarea {
+  background-color: #fbfbfb !important
+}
+
+.bg-text-main {
+  background-color: #404040 !important
+}
+
+.bg-primary-main {
+  background-color: #b23030 !important
+}
+
+.bc-text-main {
+  border-color: #404040 !important
+}
+
+.fw-w {
+  -webkit-flex-wrap: wrap !important;
+  flex-wrap: wrap !important
+}
+
+.jc-fs {
+  -webkit-justify-content: flex-start !important;
+  justify-content: flex-start !important
+}
+
+.jc-c {
+  -webkit-justify-content: center !important;
+  justify-content: center !important
+}
+
+.jc-sb {
+  -webkit-justify-content: space-between !important;
+  justify-content: space-between !important
+}
+
+.ai-c {
+  -webkit-align-items: center !important;
+  align-items: center !important
+}
+
+.tr-2 {
+  transition: all .2s !important
+}
+
+.lstn {
+  list-style-type: none !important
+}
+
+.pointer {
+  cursor: pointer !important
+}
+
+@media(max-width:48em) {
+  .pb5-s {
+    padding-bottom: 2rem !important
+  }
+
+  .w-30-s {
+    width: 30% !important
+  }
+
+  .w-100-s {
+    width: 100% !important
+  }
+
+  .fd-c-s {
+    -webkit-flex-direction: column !important;
+    flex-direction: column !important
+  }
+}
+
+@media(min-width:48em) {
+  .w-25-ns {
+    width: 25% !important
+  }
+
+  .w-30-ns {
+    width: 30% !important
+  }
+
+  .w-90-ns {
+    width: 90% !important
+  }
+}
+
+@media(max-width:80em) {
+  .container {
+    padding-left: .5rem !important
+  }
+
+  .container {
+    padding-right: .5rem !important
+  }
+
+  .px4-nl {
+    padding-left: 1.5rem !important
+  }
+
+  .px4-nl {
+    padding-right: 1.5rem !important
+  }
+}
+
+@media(min-width:80em) {
+  .db-l {
+    display: block !important
+  }
+
+  .dn-l {
+    display: none !important
+  }
+}
+
+.container {
+  max-width: 68em
+}
+
+.clearall {
+  background-color: inherit;
+  color: inherit;
+  border: initial;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  margin: 0
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.2
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: 1rem
+}
+
+table,
+td,
+tr {
+  border: 1px solid rgba(0, 0, 0, .4);
+  border-collapse: collapse
+}
+
+button {
+  cursor: pointer
+}
+
+body {
+  margin: 0;
+  position: relative;
 }

@@ -110,9 +110,9 @@ function MenuTriggerButton({
 }: MenuTriggerButtonProps) {
   return (
     <button
-      onClick={onClick}
+      // onClick={onClick}
       class={className}
-      style={`height=${ICON_SIZE};width=${ICON_SIZE}`}
+      style={`height:${ICON_SIZE};width:${ICON_SIZE}`}
     >
       {children}
     </button>

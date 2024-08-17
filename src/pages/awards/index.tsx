@@ -15,7 +15,7 @@ export default function () {
     if (awards.length === 0) return null;
     return (
       <Block>
-        <h5 className="title5 mb2">Previous {awardName} awards</h5>
+        <h5 class="title5 mb2">Previous {awardName} awards</h5>
         <table>
           <thead>
             <tr>
@@ -31,7 +31,7 @@ export default function () {
                 <tr key={i}>
                   <td>{a.recipient}</td>
                   <td>{a.school}</td>
-                  <td>{new Date(a.date).getFullYear()}</td>
+                  <td>{new Date(a.date).getUTCFullYear()}</td>
                 </tr>
               ))}
           </tbody>

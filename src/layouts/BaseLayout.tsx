@@ -38,21 +38,6 @@ export function BaseLayout({ title, children }: Props) {
 
           <link rel="manifest" href="/manifest.json" />
 
-          <link
-            rel="preload"
-            as="font"
-            type="font/otf"
-            href="/fonts/Averta/Averta-Regular.otf"
-            crossorigin
-          />
-          <link
-            rel="preload"
-            as="font"
-            type="font/woff"
-            href="/fonts/Hind/Hind-Regular.woff"
-            crossorigin
-          />
-
           <link rel="stylesheet" href="/styles/main.css" />
 
           <title>{title ? `${title} - ${APP_NAME_LONG}` : APP_NAME_LONG}</title>

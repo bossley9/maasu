@@ -4,5 +4,5 @@ type Props = {
 };
 
 export function Block({ children, className = "" }: Props) {
-  return <div class={`my4 ${className}`}>{children}</div>;
+  return <div class={`my4${className ? " " + className : ""}`}>{children}</div>;
 }

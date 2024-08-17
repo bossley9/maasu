@@ -33,7 +33,7 @@ export function Icon({ className = "", icon }: Props) {
         <svg
           aria-hidden="true"
           focusable="false"
-          class={className}
+          class={`fa-w-10${className ? " " + className : ""}`}
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 320 512"
@@ -50,7 +50,7 @@ export function Icon({ className = "", icon }: Props) {
         <svg
           aria-hidden="true"
           focusable="false"
-          class={className}
+          class={`fa-w-14${className ? " " + className : ""}`}
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 512"
@@ -67,7 +67,7 @@ export function Icon({ className = "", icon }: Props) {
         <svg
           aria-hidden="true"
           focusable="false"
-          class={className}
+          class={`fa-w-14${className ? " " + className : ""}`}
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 512"
@@ -101,7 +101,7 @@ export function Icon({ className = "", icon }: Props) {
         <svg
           aria-hidden="true"
           focusable="false"
-          class={className}
+          class={`fa-w-16${className ? " " + className : ""}`}
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"

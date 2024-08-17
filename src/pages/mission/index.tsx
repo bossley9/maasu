@@ -98,9 +98,9 @@ export default function () {
               developing a strategic plan for the next few years. See our
               strategic plan for 2020-2024
             </span>{" "}
-            <A href="/assets/2020-2024-strategic-plan.pdf">here</A>.
+            <A newTab href="/assets/2020-2024-strategic-plan.pdf">here</A>.
           </p>
-          <A href="/assets/2020-2024-strategic-plan.pdf">
+          <A newTab href="/assets/2020-2024-strategic-plan.pdf">
             <img
               class="db w-80 mxa"
               src="/assets/photos/2020-strategic-plan.jpg"
