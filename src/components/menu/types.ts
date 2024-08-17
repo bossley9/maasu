@@ -1,1 +1,1 @@
-export type Menu = { [key: string]: string | Menu }
+export type Menu = { [key: string]: string | Menu };
