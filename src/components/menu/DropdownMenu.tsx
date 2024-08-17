@@ -1,19 +1,9 @@
 import { Menu } from "./types";
-import { A } from "../Link";
-
-// https://developer.mozilla.org/en-US/docs/Learn/Accessibility/CSS_and_JavaScript
-// https://www.w3.org/WAI/tutorials/menus/flyout/#flyoutnavkbbtn
-
-// this menu assumes only one nested level max since it prevents over-complexity
-
-// it also assumes all links are relative and internal
 
 const ulClassNames = "lstn pa0 ma0";
 const liClassNames = "pointer px2";
 
 const itemClassNames = "ff-averta c-text-light hov-c-primary-main fw700";
-
-const mouseOutTimeout = 100;
 
 type MenuProps = { menu: Menu; className?: string };
 
@@ -40,6 +30,40 @@ export function DropdownMenu({ menu, className = "" }: MenuProps) {
           );
         })}
       </ul>
+      <script>
+        {`
+        document.querySelectorAll(".js-dropdown").forEach(function(dropdown) {
+          let timer = -1
+          const button = dropdown.querySelector("button")
+          const submenu = dropdown.querySelector("ul")
+
+          function openMenu() {
+            submenu.style.display = "block"
+            window.clearTimeout(timer)
+            button.ariaExpanded = true
+          }
+
+          function closeMenu() {
+            submenu.style.display = "none"
+            button.ariaExpanded = false
+          }
+
+          dropdown.addEventListener("mouseover", openMenu)
+
+          dropdown.addEventListener("mouseout", function() {
+            timer = window.setTimeout(closeMenu, 100)
+          })
+
+          button.addEventListener("click", function() {
+            if (submenu.style.display === "block") {
+              closeMenu()
+            } else {
+              openMenu()
+            }
+          })
+        })
+        `}
+      </script>
     </nav>
   );
 }
@@ -50,45 +74,16 @@ type SubmenuProps = {
 };
 
 function DropdownSubmenu({ title, children }: SubmenuProps) {
-  const isOpen = false;
-  // const setIsOpen = (_newState: boolean) => {};
-  // let timer = -1;
-
-  // const handleMouseOver = () => {
-  //   setIsOpen(true);
-  //   window.clearTimeout(timer);
-  // };
-
-  // const handleMouseOut = () => {
-  //   timer = window.setTimeout(() => setIsOpen(false), mouseOutTimeout);
-  // };
-
-  // const handleBlur = () => {
-  //   // if (el.current && !el.current.contains(e.relatedTarget as Node)) {
-  //   // setIsOpen(false);
-  //   // }
-  // };
-
-  // const handleClick = () => setIsOpen(!isOpen);
-
   return (
-    <li
-      // onMouseOver={handleMouseOver}
-      // onMouseOut={handleMouseOut}
-      // onBlur={handleBlur}
-      class={`${liClassNames} posr dib`}
-    >
+    <li class={`${liClassNames} posr dib js-dropdown`}>
       <button
         class={`clearall ${itemClassNames}`}
-        // onClick={handleClick}
         aria-haspopup="true"
-        aria-expanded={isOpen}
+        aria-expanded="false"
       >
         {title}
       </button>
-      <ul
-        class={`${ulClassNames} posa pa1 bs2 bg-bg-main ${!isOpen ? "dn" : ""}`}
-      >
+      <ul class={`${ulClassNames} bg-bg-main submenu`} style="display:none">
         {children}
       </ul>
     </li>

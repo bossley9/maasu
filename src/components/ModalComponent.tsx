@@ -1,76 +1,23 @@
-// import { getIsModalOpen, getModalMeta } from 'store/selectors'
-// import { closeModal } from 'store/Modals/actions'
+import { MENU } from "../constants";
+import { RenderMenu } from "./menu/ModalMenu";
 
-const modalId = "modal-container-master";
+export const MODAL_ID = "modal-container-master";
+export const MODAL_ID_BUTTON = "modal-button";
 
-type Props = {
-  children?: JSX.Element;
-};
-
-export function ModalComponent({ children }: Props) {
-  const isOpen = false;
-  const classNames = "";
-  // const isOpen = useSelector(getIsModalOpen)
-  // const meta = useSelector(getModalMeta)
-  // const { classNames, children } = meta;
-  // const dispatch = useDispatch()
-
-  // useEffect(() => {
-  //   let focusElems: HTMLElement[] = []
-  //   const modal = document.getElementById(modalId) as HTMLElement
-  //
-  //   const handleFocus = (e: KeyboardEvent) => {
-  //     const target = e.target as Node
-  //
-  //     switch (e.key) {
-  //       case 'Escape':
-  //         dispatch(closeModal())
-  //         break
-  //       case 'Tab':
-  //         if (!modal.contains(target)) {
-  //           if (e.shiftKey) {
-  //             focusElems[focusElems.length - 1].focus()
-  //           } else {
-  //             focusElems[0].focus()
-  //           }
-  //         }
-  //         break
-  //       default:
-  //         break
-  //     }
-  //   }
-  //
-  //   if (isOpen) {
-  //     document.body.style.overflow = 'hidden'
-  //     window.addEventListener('keydown', handleFocus)
-  //
-  //     focusElems = Array.from(
-  //       modal.querySelectorAll(
-  //         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-  //       )
-  //     )
-  //   } else {
-  //     document.body.style.overflow = 'initial'
-  //     window.removeEventListener('keydown', handleFocus)
-  //   }
-  //
-  //   return () => {
-  //     window.removeEventListener('keydown', handleFocus)
-  //   }
-  // }, [isOpen, dispatch])
-
+export function ModalComponent() {
   return (
-    <div
-      id={modalId}
-      aria-hidden={!isOpen}
-      class={`posf t-0 r-0 b-0 l-0 z2 ${!isOpen ? "dn" : ""}`}
-    >
-      <div
-        class={`posr h-100 w-100 of-ys ${classNames}`}
-        style="background-color:rgba(0, 0, 0, 0.4)"
-      >
-        {children}
-      </div>
-    </div>
+    <>
+      <dialog id={MODAL_ID} class="mobile-menu">
+        <RenderMenu menu={MENU} />
+      </dialog>
+      <script>
+        {`
+        document.getElementById("${MODAL_ID_BUTTON}")
+          .addEventListener("click", function() {
+            document.getElementById("${MODAL_ID}").show();
+          })
+        `}
+      </script>
+    </>
   );
 }

@@ -494,3 +494,49 @@ body {
   margin: 0;
   position: relative;
 }
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  z-index: 2;
+}
+
+.pt5 {
+  padding-top: 2rem !important
+}
+
+.py2 {
+  padding-top: .5rem !important;
+  padding-bottom: .5rem !important;
+}
+
+.py4 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.fs2 {
+  font-size: 2.25rem !important
+}
+
+ul.submenu {
+  position: absolute;
+  padding: .25rem !important;
+  box-shadow: 0 0 2px #464646;
+}
+
+.dialog-container {
+  position: relative;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.navlink {
+  text-decoration: none;
+}

@@ -16,11 +16,7 @@ export function HeaderComponent() {
               />
             </a>
             <DropdownMenu menu={MENU} className="dn db-l" />
-            <ModalMenu
-              menu={MENU}
-              triggerClassNames="db dn-l"
-              menuClassNames="db dn-l bg-bg-main"
-            />
+            <ModalMenu triggerClassNames="db dn-l" />
           </div>
         </div>
       </header>

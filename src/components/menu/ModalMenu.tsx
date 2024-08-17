@@ -1,34 +1,18 @@
 import { Menu } from "./types";
 import { Icon } from "../Icon";
+import { MODAL_ID_BUTTON } from "../ModalComponent";
 
 type Props = {
-  menu: Menu;
   triggerClassNames?: string;
-  menuClassNames?: string;
 };
 
 const ICON_SIZE = "32px";
 
-export function ModalMenu({
-  menu,
-  triggerClassNames = "",
-  menuClassNames = "",
-}: Props) {
-  // const dispatch = useDispatch();
-
-  const handleMenuOpen = () => {
-    // dispatch(
-    //   openModal({
-    //     classNames: menuClassNames,
-    //     children: <RenderMenu menu={menu} />,
-    //   }),
-    // );
-  };
-
+export function ModalMenu({ triggerClassNames = "" }: Props) {
   return (
     <div class={triggerClassNames}>
       <MenuTriggerButton
-        onClick={handleMenuOpen}
+        id={MODAL_ID_BUTTON}
         className="clearall hov-c-primary-main"
       >
         <Icon icon="bars" className="fs2" />
@@ -41,38 +25,29 @@ type RenderMenuProps = {
   menu: Menu;
 };
 
-function RenderMenu({ menu }: RenderMenuProps) {
-  // const dispatch = useDispatch();
-
+export function RenderMenu({ menu }: RenderMenuProps) {
   const keys = Object.keys(menu);
 
   const itemClassNames = "db fs2 c-text-light ff-averta fw700";
   const linkClassNames = "c-text-main hov-c-primary-main";
 
-  const handleMenuClose = () => {
-    // dispatch(closeModal());
-  };
-
-  const handleLinkClick = (url: string) => {
-    navigate(url);
-    handleMenuClose();
-  };
-
   const renderLink = (name: string, url: string) => (
-    <button
-      onClick={() => handleLinkClick(url)}
-      class={`clearall ${itemClassNames} ${linkClassNames}`}
+    <a
+      href={url}
+      class={`clearall ${itemClassNames} ${linkClassNames} navlink`}
     >
       {name}
-    </button>
+    </a>
   );
 
   return (
     <div class="h-100">
-      <div class="container pt5">
-        <MenuTriggerButton onClick={handleMenuClose} className="clearall">
-          <Icon icon="times" className="fs3 hov-c-primary-main" />
-        </MenuTriggerButton>
+      <div class="dialog-container container pt5">
+        <form method="dialog">
+          <MenuTriggerButton className="clearall">
+            <Icon icon="times" className="fs3 hov-c-primary-main" />
+          </MenuTriggerButton>
+        </form>
 
         <nav aria-label="menu" class="tc py5">
           <ul class="clearall lstn">
@@ -81,7 +56,7 @@ function RenderMenu({ menu }: RenderMenuProps) {
               return typeof item === "string" ? (
                 <li class="py4">{renderLink(k, item)}</li>
               ) : (
-                <li className="py2">
+                <li class="py2">
                   <span class={itemClassNames}>{k}</span>
                   <ul class="clearall">
                     {Object.keys(item).map((sk) =>
@@ -101,16 +76,16 @@ function RenderMenu({ menu }: RenderMenuProps) {
 type MenuTriggerButtonProps = {
   children?: JSX.Element;
   className?: string;
-  onClick: () => void;
+  id?: string;
 };
 function MenuTriggerButton({
-  onClick,
+  id,
   className = "",
   children,
 }: MenuTriggerButtonProps) {
   return (
     <button
-      // onClick={onClick}
+      {...(id && { id })}
       class={className}
       style={`height:${ICON_SIZE};width:${ICON_SIZE}`}
     >
