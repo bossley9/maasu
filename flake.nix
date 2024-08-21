@@ -23,8 +23,6 @@
           pkgs.nodePackages.vscode-langservers-extracted
           pkgs.nodePackages.typescript-language-server
           pkgs.efm-langserver
-          # dev server
-          pkgs.python3
         ];
         shellHook = ''
           set -o vi

@@ -9,7 +9,7 @@ async function* walk(dir: string): AsyncGenerator<string> {
   }
 }
 
-async function main() {
+export async function build() {
   fs.rmSync("./dist", { recursive: true, force: true });
 
   for await (const page of walk("./src/pages")) {
@@ -23,4 +23,4 @@ async function main() {
   fs.cpSync("./src/static", "./dist", { recursive: true });
 }
 
-main();
+build();
