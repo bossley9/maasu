@@ -40,15 +40,17 @@ export default function () {
         </TextBlock>
         <TextBlock title="Our Members">
           <ul class="mxa w-30 w-100-s">
-            {members.map((member) => (
-              <li>
-                {member.orgUrl ? (
-                  <A href={member.orgUrl}>{member.institution}</A>
-                ) : (
-                  <span>{member.institution}</span>
-                )}
-              </li>
-            ))}
+            {members
+              .sort((a, b) => a.institution.localeCompare(b.institution))
+              .map((member) => (
+                <li>
+                  {member.url ? (
+                    <A href={member.url}>{member.institution}</A>
+                  ) : (
+                    <span>{member.institution}</span>
+                  )}
+                </li>
+              ))}
           </ul>
         </TextBlock>
         <TextBlock title="Representatives">
