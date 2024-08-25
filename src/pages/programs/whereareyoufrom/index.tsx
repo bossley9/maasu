@@ -1,9 +1,9 @@
-import { BaseLayout } from "../../../layouts/BaseLayout";
-import { A } from "../../../components/Link";
-import { EA } from "../../../components/EmailAnchor";
-import { TextBlock } from "../../../components/TextBlock";
-import { SOCIAL } from "../../../constants";
-import { Container } from "../../../components/Container";
+import { BaseLayout } from "@/layouts/BaseLayout";
+import { A } from "@/components/Link";
+import { EA } from "@/components/EmailAnchor";
+import { TextBlock } from "@/components/TextBlock";
+import { SOCIAL } from "@/constants";
+import { Container } from "@/components/Container";
 
 export default function () {
   return (

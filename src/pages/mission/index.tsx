@@ -1,7 +1,7 @@
-import { Container } from "../../components/Container";
-import { TextBlock } from "../../components/TextBlock";
-import { A } from "../../components/Link";
-import { BaseLayout } from "../../layouts/BaseLayout";
+import { Container } from "@/components/Container";
+import { TextBlock } from "@/components/TextBlock";
+import { A } from "@/components/Link";
+import { BaseLayout } from "@/layouts/BaseLayout";
 
 export default function () {
   return (

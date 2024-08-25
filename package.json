@@ -3,7 +3,8 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "build": "tsx main.ts",
+    "check": "tsc --noEmit",
+    "build": "npm run check && tsx main.ts",
     "dev": "tsx watch server.ts"
   },
   "devDependencies": {

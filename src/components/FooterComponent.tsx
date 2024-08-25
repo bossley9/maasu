@@ -1,6 +1,6 @@
-import { APP_NAME_LONG, LOGO_HEIGHT, SOCIAL } from "../constants";
-import { Icon } from "./Icon";
-import { A } from "./Link";
+import { APP_NAME_LONG, LOGO_HEIGHT, SOCIAL } from "@/constants";
+import { Icon } from "@/components/Icon";
+import { A } from "@/components/Link";
 
 const textLinkClassNames = "tdn c-inh hov-tdu mx1 hov-c-primary-main";
 

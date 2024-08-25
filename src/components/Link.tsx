@@ -1,3 +1,5 @@
+import { JSX } from "@bossley9/sjsx/jsx-runtime";
+
 const newTabProps = { target: "_blank", rel: "noreferrer noopener" };
 const classNames = "c-text-main tdu hov-c-primary-main";
 

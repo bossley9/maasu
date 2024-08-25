@@ -1,9 +1,9 @@
-import { EA } from "../../components/EmailAnchor";
-import { A } from "../../components/Link";
-import { Container } from "../../components/Container";
-import { TextBlock } from "../../components/TextBlock";
-import { memberList } from "../../data/members";
-import { BaseLayout } from "../../layouts/BaseLayout";
+import { EA } from "@/components/EmailAnchor";
+import { A } from "@/components/Link";
+import { Container } from "@/components/Container";
+import { TextBlock } from "@/components/TextBlock";
+import { memberList } from "@/data/members";
+import { BaseLayout } from "@/layouts/BaseLayout";
 
 export default function () {
   const members = memberList.sort((a, b) =>
@@ -40,17 +40,15 @@ export default function () {
         </TextBlock>
         <TextBlock title="Our Members">
           <ul class="mxa w-30 w-100-s">
-            {members
-              .sort((a, b) => a.institution.localeCompare(b.institution))
-              .map((member) => (
-                <li>
-                  {member.url ? (
-                    <A href={member.url}>{member.institution}</A>
-                  ) : (
-                    <span>{member.institution}</span>
-                  )}
-                </li>
-              ))}
+            {members.map((member) => (
+              <li>
+                {member.url ? (
+                  <A href={member.url}>{member.institution}</A>
+                ) : (
+                  <span>{member.institution}</span>
+                )}
+              </li>
+            ))}
           </ul>
         </TextBlock>
         <TextBlock title="Representatives">

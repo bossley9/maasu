@@ -1,14 +1,14 @@
-import { Block } from "../../components/Block";
-import { Container } from "../../components/Container";
-import { TextBlock } from "../../components/TextBlock";
+import { Block } from "@/components/Block";
+import { Container } from "@/components/Container";
+import { TextBlock } from "@/components/TextBlock";
 import {
   Award,
   charlesChangAwardees,
   midwesternStarAwardees,
   boaAwardees,
-} from "../../data/awards";
-import { BaseLayout } from "../../layouts/BaseLayout";
-import { sortByDate } from "../../utils";
+} from "@/data/awards";
+import { BaseLayout } from "@/layouts/BaseLayout";
+import { sortByDate } from "@/utils";
 
 export default function () {
   const renderAwardsTable = (awardName: string, awards: Award[]) => {

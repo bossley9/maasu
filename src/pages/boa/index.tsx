@@ -1,8 +1,8 @@
-import { Container } from "../../components/Container";
-import { TextBlock } from "../../components/TextBlock";
-import { EA } from "../../components/EmailAnchor";
-import { A } from "../../components/Link";
-import { BaseLayout } from "../../layouts/BaseLayout";
+import { Container } from "@/components/Container";
+import { TextBlock } from "@/components/TextBlock";
+import { EA } from "@/components/EmailAnchor";
+import { A } from "@/components/Link";
+import { BaseLayout } from "@/layouts/BaseLayout";
 
 export default function () {
   return (

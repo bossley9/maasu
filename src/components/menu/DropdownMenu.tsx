@@ -1,10 +1,11 @@
-import { Menu } from "./types";
+import { JSX } from "@bossley9/sjsx/jsx-runtime";
 
 const ulClassNames = "lstn pa0 ma0";
 const liClassNames = "pointer px2";
 
 const itemClassNames = "ff-averta c-text-light hov-c-primary-main fw700";
 
+export type Menu = { [key: string]: string | Menu };
 type MenuProps = { menu: Menu; className?: string };
 
 export function DropdownMenu({ menu, className = "" }: MenuProps) {

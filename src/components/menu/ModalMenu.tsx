@@ -1,6 +1,7 @@
-import { Menu } from "./types";
-import { Icon } from "../Icon";
-import { MODAL_ID_BUTTON } from "../ModalComponent";
+import { Menu } from "@/components/menu/DropdownMenu";
+import { Icon } from "@/components/Icon";
+import { MODAL_ID_BUTTON } from "@/components/ModalComponent";
+import { JSX } from "@bossley9/sjsx/jsx-runtime";
 
 type Props = {
   triggerClassNames?: string;

@@ -1,9 +1,9 @@
-import { Container } from "../../components/Container";
-import { TextBlock } from "../../components/TextBlock";
-import { MONTHS } from "../../constants";
-import { conferences } from "../../data/conferences";
-import { getConferenceTypeName } from "../../utils";
-import { BaseLayout } from "../../layouts/BaseLayout";
+import { Container } from "@/components/Container";
+import { TextBlock } from "@/components/TextBlock";
+import { MONTHS } from "@/constants";
+import { conferences } from "@/data/conferences";
+import { getConferenceTypeName } from "@/utils";
+import { BaseLayout } from "@/layouts/BaseLayout";
 
 export default function () {
   return (

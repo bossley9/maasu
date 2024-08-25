@@ -1,6 +1,6 @@
-import { Container } from "../../components/Container";
-import { TextBlock } from "../../components/TextBlock";
-import { BaseLayout } from "../../layouts/BaseLayout";
+import { Container } from "@/components/Container";
+import { TextBlock } from "@/components/TextBlock";
+import { BaseLayout } from "@/layouts/BaseLayout";
 
 export default function () {
   const inputClassNames =

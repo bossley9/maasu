@@ -7,6 +7,11 @@
     "target": "es2016",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "strict": true,
     "skipLibCheck": true
   }

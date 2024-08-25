@@ -1,8 +1,8 @@
-import { Container } from "../../components/Container";
-import { TextBlock } from "../../components/TextBlock";
-import { A } from "../../components/Link";
-import { board, BoardMember } from "../../data/board";
-import { BaseLayout } from "../../layouts/BaseLayout";
+import { Container } from "@/components/Container";
+import { TextBlock } from "@/components/TextBlock";
+import { A } from "@/components/Link";
+import { board, BoardMember } from "@/data/board";
+import { BaseLayout } from "@/layouts/BaseLayout";
 
 function BoardMemberProfile({ member }: { member: BoardMember }) {
   return (

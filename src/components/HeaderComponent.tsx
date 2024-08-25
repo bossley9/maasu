@@ -1,6 +1,6 @@
-import { DropdownMenu } from "./menu/DropdownMenu";
-import { ModalMenu } from "./menu/ModalMenu";
-import { APP_NAME_LONG, HEADER_HEIGHT, LOGO_HEIGHT, MENU } from "../constants";
+import { DropdownMenu } from "@/components/menu/DropdownMenu";
+import { ModalMenu } from "@/components/menu/ModalMenu";
+import { APP_NAME_LONG, HEADER_HEIGHT, LOGO_HEIGHT, MENU } from "@/constants";
 
 export function HeaderComponent() {
   return (

@@ -1,3 +1,5 @@
+import { JSX } from "@bossley9/sjsx/jsx-runtime";
+
 type Props = {
   children?: JSX.Element;
   className?: string;

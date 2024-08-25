@@ -1,4 +1,5 @@
-import { A } from "./Link";
+import { JSX } from "@bossley9/sjsx/jsx-runtime";
+import { A } from "@/components/Link";
 
 interface Props {
   children?: JSX.Element;

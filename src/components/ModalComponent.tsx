@@ -1,5 +1,5 @@
-import { MENU } from "../constants";
-import { RenderMenu } from "./menu/ModalMenu";
+import { MENU } from "@/constants";
+import { RenderMenu } from "@/components/menu/ModalMenu";
 
 export const MODAL_ID = "modal-container-master";
 export const MODAL_ID_BUTTON = "modal-button";

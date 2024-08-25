@@ -1,4 +1,5 @@
-import { Block } from "./Block";
+import { JSX } from "@bossley9/sjsx/jsx-runtime";
+import { Block } from "@/components/Block";
 
 type Props = {
   children?: JSX.Element;

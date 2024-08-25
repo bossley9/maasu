@@ -1,7 +1,8 @@
-import { HeaderComponent } from "../components/HeaderComponent";
-import { FooterComponent } from "../components/FooterComponent";
-import { APP_NAME_LONG } from "../constants";
-import { ModalComponent } from "../components/ModalComponent";
+import { JSX } from "@bossley9/sjsx/jsx-runtime";
+import { HeaderComponent } from "@/components/HeaderComponent";
+import { FooterComponent } from "@/components/FooterComponent";
+import { APP_NAME_LONG } from "@/constants";
+import { ModalComponent } from "@/components/ModalComponent";
 
 type Props = {
   children?: JSX.Element;

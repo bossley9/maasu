@@ -1,8 +1,8 @@
-import { A } from "../../components/Link";
-import { Container } from "../../components/Container";
-import { TextBlock } from "../../components/TextBlock";
-import { HistoryEvent, history } from "../../data/history";
-import { BaseLayout } from "../../layouts/BaseLayout";
+import { A } from "@/components/Link";
+import { Container } from "@/components/Container";
+import { TextBlock } from "@/components/TextBlock";
+import { HistoryEvent, history } from "@/data/history";
+import { BaseLayout } from "@/layouts/BaseLayout";
 
 export default function () {
   const hxstory: Record<string, HistoryEvent[]> = history.reduce(

@@ -1,8 +1,8 @@
-import { A } from "../../components/Link";
-import { Container } from "../../components/Container";
-import { TextBlock } from "../../components/TextBlock";
-import { conferences } from "../../data/conferences";
-import { BaseLayout } from "../../layouts/BaseLayout";
+import { A } from "@/components/Link";
+import { Container } from "@/components/Container";
+import { TextBlock } from "@/components/TextBlock";
+import { conferences } from "@/data/conferences";
+import { BaseLayout } from "@/layouts/BaseLayout";
 
 export default function () {
   const exLSList = conferences
