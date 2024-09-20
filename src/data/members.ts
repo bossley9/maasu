@@ -39,6 +39,9 @@ export const memberList: Member[] = [
     url: "https://www.facebook.com/asu.minnesota",
   },
   {
+    institution: "University of Nebraska Lincoln",
+  },
+  {
     institution: "University of Nebraska Omaha",
     url: "https://linktr.ee/unoams",
   },
