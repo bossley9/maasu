@@ -9,7 +9,7 @@ export default function () {
   return (
     <BaseLayout title="Conferences">
       <Container>
-        <TextBlock title="Past Conferences">
+        <TextBlock title="Conferences">
           <p class="tc">
             Below is a summary of all conferences that MAASU has aided in
             hosting or organizing.

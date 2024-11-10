@@ -13,6 +13,28 @@ export type Conference = {
 
 export const conferences: Conference[] = [
   {
+    id: "25character",
+    date: "03/28/2025",
+    type: "SC",
+    title: "Redefining Culture and Identity to Grow Our Own Character Arcs",
+    host: "Indiana University Bloomington",
+    city: "Bloomington",
+    state: "IN",
+    isApproxDate: false,
+    bid: "",
+  },
+  {
+    id: "24lotus",
+    date: "11/09/2024",
+    type: "MX",
+    title: "Living like the Lotus: Blooming in the Face of Adversity",
+    host: "The University of Kansas",
+    city: "Lawrence",
+    state: "KS",
+    isApproxDate: false,
+    bid: "",
+  },
+  {
     id: "24transforming",
     date: "04/05/2024",
     type: "SC",
@@ -896,4 +918,3 @@ export const conferences: Conference[] = [
     bid: "",
   },
 ];
-
